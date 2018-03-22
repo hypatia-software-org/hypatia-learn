@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/png" href="static/img/hypatia_icon.png"/>
+    <link href="/static/css/main.css" rel="stylesheet" />
+    {% load bootstrap3 %}
+    {% load jquery %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+    <title>{% block page_title %}Hypatia Learning Platform{% endblock %}</title>
+  </head>
+  <body>
+    {% include 'hypatia_learn/parts/header.html' %}
+    {% include 'hypatia_learn/parts/nav.html' %}
+
+    {% block main_content %}
+    <section class="main_content">
+    </section>
+    {% endblock %}
+
+    {% block footer %}
+    <div class="footer">
+    </div>
+    {% endblock %}
+  </body>
+</html>

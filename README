@@ -1,0 +1,9 @@
+Developer Setup
+---
+1. Create a virtualenv for python3.6:
+
+   virtualenv --python=python3.6 .venv
+
+Production Setup
+---
+
