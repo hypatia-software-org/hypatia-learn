@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'hypatia_learn',
+    'resources.ecr',
+    'resources.mentor',
     'civicrm_api',
     'bootstrap3',
 ]
