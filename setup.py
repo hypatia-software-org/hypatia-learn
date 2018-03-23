@@ -1,4 +1,4 @@
-from config import __version__ as version
+from config.version import __version__ as version
 from setuptools import setup, find_packages
 
 
