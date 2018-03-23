@@ -7,7 +7,7 @@ license = open('LICENSE').read()
 setup(
     name='hypatia-learn',
     version=version,
-    description='Enable peer mentorship!'
+    description='Enable peer mentorship!',
     long_description='',
     license=license,
     author='Hypatia Software Org',
