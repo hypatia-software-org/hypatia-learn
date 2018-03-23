@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'hypatia_learn',
+    'civicrm_api',
     'bootstrap3',
 ]
 
@@ -74,6 +75,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'hypatia_learn.wsgi.application'
 
+CIVICRM_KEY = os.getenv('CIVICRM_KEY')
+CIVICRM_API_KEY = os.getenv('CIVICRM_API_KEY')
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
@@ -81,7 +84,7 @@ WSGI_APPLICATION = 'hypatia_learn.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-	'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -91,16 +94,16 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-	'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
     },
     {
-	'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
     },
     {
-	'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
     },
     {
-	'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
 
@@ -126,7 +129,7 @@ STATIC_URL = '/static/'
 #STATICFILES_STORAGE = 'pipeline.storage.PipelineStorage'
 #STATIC_URL = '/static/'
 #STATIC_ROOT = os.path.abspath(os.path.join(BASE_DIR, 'staticfiles'))
-#STATICFILES_FINDERS = [
+# STATICFILES_FINDERS = [
 #    'django.contrib.staticfiles.finders.FileSystemFinder',
 #    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 #    'pipeline.finders.PipelineFinder',
@@ -146,7 +149,7 @@ PIPELINE = {
             'source_filenames': (
                 None,
             ),
-        'output_filename': 'js/main.js',
+            'output_filename': 'js/main.js',
         },
     },
     'COMPILERS': (
