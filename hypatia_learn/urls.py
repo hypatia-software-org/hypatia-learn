@@ -22,5 +22,6 @@ urlpatterns = [
     path('lms-admin/', admin.site.urls),
     path('ecr/', include('resources.ecr.urls')),
     path('mentor/', include('resources.mentor.urls')),
+    path('openid/', include('djangooidc.urls')),
     path('', hypatia_views.dashboard.as_view(), name='dashboard'),
 ]
