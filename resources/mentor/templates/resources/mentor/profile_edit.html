@@ -1,0 +1,22 @@
+{% extends 'hypatia_learn/base.html' %}
+
+{% block main_content %}
+<div class="main-content">
+  <form action="/mentor/update" method="post">
+    {% csrf_token %}
+    {% for field in form %}
+    <div class="row ui-widget">
+      <div class="col-md-1"><b>{{ field.label }}</b></div>
+      <div class="col-md-11">{{ field }}</div>
+    </div>
+    {% endfor %}
+    <input class="btn btn-success" type="submit" />
+  </form>
+</div>
+
+{{info}}
+<img alt="Profile Picture" src="{{info.image_URL}}&mime-type=image/jpg" />
+{{info.image_URL}}
+{% endblock %}
+
+
