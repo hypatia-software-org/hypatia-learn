@@ -1,28 +1,32 @@
 {% extends 'hypatia_learn/base.html' %}
 
 {% block main_content %}
-<div class="main-content">
+<div class="main-content mentor-profile">
+  <div class="row mentor-header">
+    <h1>Mentor Profile</h1>
+  </div>
   <div class="row">
-    <h2>{{info.display_name}}</h2>
-    <p><strong>Pronouns: </strong>{{info.custom_5}}</p>
-    <p><strong>About: </strong></p>{{info.custom_92|safe}}
-    
-    <p><strong>Hobbies: </strong>{{info.custom_93}}</p>
-    <p><strong>Skills: </strong>
-      {% for tag in info.tags %}
-      {% if tag %}
-      <span class="tag">{{tag}}</span>
-      {% endif %}
-      {% endfor %}
-    </p>
-    <figure>
-      <img src="{{info.image_URL}}" alt="" class="img-circle img-responsive" />
-    </figure>
-    <a class="btn btn-success btn-block" href="{% url 'mentor_request' info.id %}"><span class="fa fa-plus-circle"></span> Request As Mentor </a>
-    <button class="btn btn-info btn-block"><span class="fa fa-user"></span> Contact </button>
+    <div class="col-md-3 text-center">
+      <figure>
+        <img src="{{info.image_URL|safe}}" alt="" class="img-profile img-circle img-responsive text-center" />
+      </figure>
+      <a class="btn btn-success btn-block" href="{% url 'mentor_request' info.id %}"><span class="fa fa-plus-circle"></span> Request As Mentor </a>
+      <button class="btn btn-info btn-block"><span class="fa fa-user"></span> Contact </button>
+
+    </div>
+    <div class="col-md-9">
+      <h2>{{info.display_name}}</h2>
+      <p><strong>Pronouns: </strong>{{info.custom_5}}</p>
+      <p><strong>Skills: </strong>
+        {% for tag in info.tags %}
+        {% if tag %}
+        <span class="tag">{{tag}}</span>
+        {% endif %}
+        {% endfor %}
+      </p>
+      <p><strong>About: </strong></p>{{info.custom_92|safe}}
+      <p><strong>Hobbies: </strong>{{info.custom_93}}</p>
+    </div>
   </div>
 </div>
-{{info}}
-<img alt="Profile Picture" src="{{info.image_URL}}&mime-type=image/jpg" />
-{{info.image_URL}}
 {% endblock %}
