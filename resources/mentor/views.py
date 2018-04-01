@@ -36,7 +36,8 @@ class mentor_profile_edit(views.base.TemplateView):
         context = super().get_context_data(**kwargs)
         civi_api = api.CivicrmApi()
         info = civi_api.get_contact_mentor(context['cid'])
-
+        context['info'] = info
+        print(info['image_URL'])
         form_data = {}
         form_data['pronouns'] = info['custom_5']
         form_data['bio'] = info['custom_92']
