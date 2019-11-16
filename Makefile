@@ -1,3 +1,5 @@
+install:
+	pip install -r requirements/dev.txt
 clean:
 	autopep8 -raai hypatia_learn/
 	autopep8 -raai resources/
